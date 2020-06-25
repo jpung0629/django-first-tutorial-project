@@ -1,16 +1,18 @@
 <html>
     <head>
-        <title>Pung's blog</title>
+        <title>Pung's Blog</title>
     </head>
     <body>
+        <div><h1>Pung's blog</h1></div>
         <div>
-            <h1><a href="">Pung's Blog</a></h1>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{post.published_date}}</p>
+                    <h1><a href="">{{post.title}}</a></p>
+                    <p>{{post.text|linebreaksbr}}</p>
+                </div>
+            {% endfor %}
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-        </div>
     </body>
-
 </html>
